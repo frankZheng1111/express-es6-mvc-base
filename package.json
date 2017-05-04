@@ -4,7 +4,10 @@
   "description": "replace-your-app-description",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test node_modules/.bin/babel-node node_modules/.bin/babel-istanbul cover node_modules/.bin/_mocha -- test --recursive",
+    "server-start": "./node_modules/.bin/pm2 start build/app_cluster.js --name 'replace-your-app-name'",
+    "build": "babel src -d build",
+    "start": "nodemon src/app.js --exec babel-node"
   },
   "repository": {
     "type": "git",
