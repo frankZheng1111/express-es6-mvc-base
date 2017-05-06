@@ -5,9 +5,10 @@ const router = express.Router();
 
 // render a html page
 //
-router.get('/',  (req, res) => {
+router.get('/:id',  (req, res) => {
   let name = req.query.name;
-  res.render('./demo/index', { demo: `Hello ${name}` })
+  let id = req.params.id;
+  res.render('./demo/index', { demoId: id, demo: `Hello ${name}` })
 });
 
 export default router;
