@@ -1,12 +1,17 @@
 extend ../layouts/layout
 
 block content
-  h1 jade
-  br
-  h2(id=`test${demoId}`) #{demo}
-  h3 code: #{demoId}
-  br
-  h4 show use components
-  br
-  include components/list.jade
-  + list(['row1', 'row2', 'row3', 1, 2, 3])
+  .panel.panel-primary
+    .panel-heading
+      h1.panel-title Show Jade Base Feature:
+    .panel-body
+      h4.alert.alert-success(id=`test${demoId}`) Show valriables passed from routes(controller):  #{demo} - #{demoId}
+      h4.alert.alert-warning show use components:
+      include components/list.jade
+      + list(['Show string;', 'And;', 'Hide Number;', 1, 2, 3])
+    .panel-footer
+
+  style.
+    .panel {
+      margin: 10%
+    }

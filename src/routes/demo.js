@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/:id',  (req, res) => {
   let name = req.query.name;
   let id = req.params.id;
-  res.render('./demo/index', { demoId: id, demo: `Hello ${name}` })
+  res.render('./demo/index', { demoId: id, demo: `${name}` })
 });
 
 export default router;
