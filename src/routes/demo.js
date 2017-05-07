@@ -1,5 +1,6 @@
 'use strict';
 import express from 'express';
+import Demo from '../models/demo'
 
 const router = express.Router();
 
@@ -8,7 +9,8 @@ const router = express.Router();
 router.get('/:id',  (req, res) => {
   let name = req.query.name;
   let id = req.params.id;
-  res.render('./demo/index', { demoId: id, demo: `${name}` })
+  let demo = new Demo(name);
+  res.render('./demo/index', { demoId: id, demo: demo.demoMessage })
 });
 
 export default router;
