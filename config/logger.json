@@ -12,7 +12,7 @@
       "level": "DEBUG",
       "appender": {
         "type": "dateFile",
-        "filename": "log/hangman",
+        "filename": "log/replace-your-name",
         "alwaysIncludePattern": true,
         "pattern": "-yyyy-MM-dd.log",
         "category": "normal"
