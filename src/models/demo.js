@@ -2,7 +2,7 @@
 
 class Demo {
   constructor(message) {
-    this.id = "id";
+    this.id = 'id';
     this.message = message;
   }
 

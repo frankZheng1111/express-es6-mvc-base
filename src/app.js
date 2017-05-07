@@ -21,7 +21,7 @@ app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, '../public')));
 app.use('/bower_components',  express.static(path.join(__dirname, '../bower_components')));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(methodOverride((req, res) => {
+app.use(methodOverride((req) => {
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
     let method = req.body._method;
     delete req.body._method;
@@ -54,6 +54,7 @@ app.locals.globalViewParams = {
 
 routes(app);
 
+/* eslint-disable */
 app.use((err, req, res, next) => {
   logger.error(err);
   res.render('500', {
